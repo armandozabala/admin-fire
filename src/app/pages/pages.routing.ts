@@ -1,3 +1,4 @@
+import { UsersComponent } from './users/users.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
     children:[
       { path: '', component: DashboardComponent},
       { path: 'graficas', component: GraficasComponent},
+      { path: 'users', component: UsersComponent},
       //{ path: '', redirectTo: '/dashboard', pathMatch: 'full'}
     ]
   }

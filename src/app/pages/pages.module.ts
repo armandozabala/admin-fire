@@ -6,7 +6,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { GraficasComponent } from './graficas/graficas.component';
 import { PagesComponent } from './pages.component';
 import { ProgressComponent } from './progress/progress.component';
-
+import { UsersComponent } from './users/users.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ProgressComponent } from './progress/progress.component';
     DashboardComponent,
     ProgressComponent,
     GraficasComponent,
-    PagesComponent
+    PagesComponent,
+    UsersComponent
   ],
   exports:[
     DashboardComponent,
@@ -25,7 +27,8 @@ import { ProgressComponent } from './progress/progress.component';
   imports: [
     CommonModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ]
 })
 export class PagesModule { }
