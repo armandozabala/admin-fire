@@ -8,7 +8,7 @@ import { PagesComponent } from './pages.component';
 import { ProgressComponent } from './progress/progress.component';
 import { UsersComponent } from './users/users.component';
 import {NgxPaginationModule} from 'ngx-pagination';
-
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     CommonModule,
     SharedModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    OrderModule
   ]
 })
 export class PagesModule { }
