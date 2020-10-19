@@ -12,12 +12,14 @@ export class UsersComponent implements OnInit {
   config:any;
   collection = { count: 0, data:[] };
 
+  firstname:any = '';
+
   constructor(private firebase: FirestoreService) { }
 
   ngOnInit(): void {
 
       this.config = {
-          itemsPerPage: 2,
+          itemsPerPage: 5,
           currentPage: 1,
           totalItems: this.collection.count
       }
@@ -58,6 +60,16 @@ export class UsersComponent implements OnInit {
   sort(key){
     this.key = key;
     this.reverse = ! this.reverse;
+  }
+
+  search(){
+      if(this.firstname == ""){
+         this.ngOnInit();
+      }else{
+          this.collection.data = this.collection.data.filter(res =>{
+                return res.firstname.toLocaleLowerCase().match(this.firstname.toLocaleLowerCase())
+          })
+      }
   }
 
 }

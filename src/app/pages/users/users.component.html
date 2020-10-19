@@ -4,7 +4,15 @@
       Users
   </div>
   <div class="card-body">
+    <div class="mt-1 mb-1">
+      <input class="form-control" placeholder="Filter" name="firstname" type="text" [(ngModel)]="firstname"/>
+
+    </div>
+
       <div class="table-responsive">
+
+
+
           <table class="table table-bordered"  width="100%" cellspacing="0">
               <thead>
                   <tr>
@@ -18,7 +26,7 @@
 
               <tbody>
 
-                  <tr *ngFor="let item of collection.data | orderBy: key : reverse : caseInsensitive : comparator | paginate: config ">
+                  <tr *ngFor="let item of collection.data | orderBy: key : reverse : caseInsensitive : comparator | paginate: config |filter: firstname ">
 
                       <td>{{item.firstname}}</td>
                       <td>{{item.lastname}}</td>
@@ -31,9 +39,9 @@
 
               </tbody>
           </table>
-          <center>
+          <div>
             <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
-          </center>
+          </div>
 
       </div>
   </div>

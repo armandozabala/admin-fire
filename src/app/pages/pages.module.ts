@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './../app-routing.module';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ import { ProgressComponent } from './progress/progress.component';
 import { UsersComponent } from './users/users.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,12 @@ import { OrderModule } from 'ngx-order-pipe';
   imports: [
     CommonModule,
     SharedModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     NgxPaginationModule,
-    OrderModule
+    OrderModule,
+    Ng2SearchPipeModule
   ]
 })
 export class PagesModule { }
