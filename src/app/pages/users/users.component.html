@@ -26,7 +26,7 @@
 
               <tbody>
 
-                  <tr *ngFor="let item of collection.data | orderBy: key : reverse : caseInsensitive : comparator | paginate: config |filter: firstname ">
+                  <tr *ngFor="let item of collection.data | orderBy: key : reverse  | paginate: config |filter: firstname ">
 
                       <td>{{item.firstname}}</td>
                       <td>{{item.lastname}}</td>

@@ -19,7 +19,7 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
 
       this.config = {
-          itemsPerPage: 5,
+          itemsPerPage: 10,
           currentPage: 1,
           totalItems: this.collection.count
       }

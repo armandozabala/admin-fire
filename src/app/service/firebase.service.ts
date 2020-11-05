@@ -140,7 +140,7 @@ export class FirestoreService {
   public getUsers() {
     return this.db
       .collection("users", (ref) =>
-        ref.limit(this.pageSize).orderBy("email", "desc")
+        ref.orderBy("email", "desc")
       )
       .snapshotChanges();
   }
