@@ -1,0 +1,23 @@
+<form>
+  <div>
+      <div class="custom-file mt-2">
+          <input type="file" class="custom-file-input" id="customFileLang" name="image" (change)="selectImage($event)" lang="es">
+          <label class="custom-file-label" for="customFileLang" data-browse="Cargar"> <div *ngIf="archivos==null"> Seleccionar Archivo </div> <div *ngIf="archivos!=null">{{archivos.name}}</div></label>
+      </div>
+  </div>
+
+  <div *ngIf="progreso > 0" class="progress mt-3" style=" height: 40px;">
+      <div class="progress-bar progress-bar-striped" role="progressbar" [ngStyle]="{ width: progreso+'%'}" attr.aria-valuenow="{{progreso}}" aria-valuemin="0" aria-valuemax="100"> {{progreso}}% </div>
+  </div>
+  <br>
+  <div>
+      <button type="button" [disabled]="archivos==null" class="btn btn-primary btn-lg active mr-2" (click)="onSubmit()">  <i class="fa fa-cogs"></i> Procesar </button>
+      <button type="button" [disabled]="descarga==null" class="btn btn-success btn-lg active" (click)="onDownload(descarga)"> <i class="fa fa-download"></i> Descargar </button>
+  </div>
+  <br>
+  <div *ngIf="descarga!=null" class="alert alert-success" role="alert">
+      <i class="fa fa-file"></i> Archivo generado: <a class="linki" (click)="onDownload(descarga)"> {{ descarga }} </a>
+  </div>
+  <br>
+
+</form>

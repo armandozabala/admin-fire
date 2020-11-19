@@ -11,6 +11,7 @@ import { UsersComponent } from './users/users.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ProgressComponent,
     GraficasComponent,
     PagesComponent,
-    UsersComponent
+    UsersComponent,
+    UploadComponent
   ],
   exports:[
     DashboardComponent,
